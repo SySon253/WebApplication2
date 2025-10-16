@@ -1,0 +1,51 @@
+﻿@model WebApplication2.Models.User
+@{
+    ViewData["Title"] = "Register";
+}
+<a asp-controller="user" asp-action="login">Back</a>
+<h3>Register</h3>
+@TempData["Msg"]
+<form method="post" asp-controller="user" asp-action="register">
+    <table>
+        <tr>
+            <td>User Name</td>
+            <td>
+                <input type="text" asp-for="UserName" />
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="text" asp-for="UserEmail" />
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" asp-for="UserPassword" />
+            </td>
+        </tr>
+        <tr>
+            <td>ConfirmPassword</td>
+            <td>
+                <input type="password" asp-for="ConfirmPassword" />
+            </td>
+        </tr>
+        <tr>
+            <td>Role</td>
+            <td>
+                <input type="checkbox" asp-for="IsAdmin" />Admin<br />
+                <input type="checkbox" asp-for="IsUser" />User
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <button type="submit">Save</button>
+
+            </td>
+        </tr>
+    </table>
+</form>

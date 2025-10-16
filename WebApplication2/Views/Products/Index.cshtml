@@ -1,0 +1,67 @@
+﻿@model IEnumerable<WebApplication2.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="w3-container">
+
+
+    <table class="w3-table-all w3-hoverable">
+        <thead>
+            <tr class="w3-light-grey">
+                <th>@Html.DisplayNameFor(model => model.ProductName)</th>
+                <th>@Html.DisplayNameFor(model => model.ProductDescription)</th>
+                <th>@Html.DisplayNameFor(model => model.ProductPrice)</th>
+                <th>@Html.DisplayNameFor(model => model.ProductDiscount)</th>
+                <th>@Html.DisplayNameFor(model => model.ProductQuantity)</th>
+                <th>@Html.DisplayNameFor(model => model.ProductPhoto)</th>
+                <th>@Html.DisplayNameFor(model => model.Category.CategoryName)</th>
+                <th>@Html.DisplayNameFor(model => model.Size.SizeName)</th>
+                <th>@Html.DisplayNameFor(model => model.Color.ColorName)</th>
+                <th>@Html.DisplayNameFor(model => model.IsTrandy)</th>
+                <th>@Html.DisplayNameFor(model => model.IsArrived)</th>
+                <th>@Html.DisplayNameFor(model => model.IsSportSwear)</th>
+                <th>@Html.DisplayNameFor(model => model.IsFeatured)</th>
+                <th>@Html.DisplayNameFor(model => model.IsOfficeClothes)</th>
+                <th>@Html.DisplayNameFor(model => model.IsWinterClothes)</th>
+                <th>@Html.DisplayNameFor(model => model.IsPoloShirt)</th>
+                <th>@Html.DisplayNameFor(model => model.IsShorts)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
+                <td>@Html.DisplayFor(modelItem => item.ProductDescription)</td>
+                <td>@Html.DisplayFor(modelItem => item.ProductPrice)</td>
+                <td>@Html.DisplayFor(modelItem => item.ProductDiscount)</td>
+                <td>@Html.DisplayFor(modelItem => item.ProductQuantity)</td>
+                <td>@Html.DisplayFor(modelItem => item.ProductPhoto)</td>
+                <td>@Html.DisplayFor(modelItem => item.Category.CategoryName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Size.SizeName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Color.ColorName)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsTrandy)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsArrived)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsSportSwear)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsFeatured)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsOfficeClothes)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsWinterClothes)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsPoloShirt)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsShorts)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

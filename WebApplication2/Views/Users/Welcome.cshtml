@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+
+
+@* <h3>Welcome @ViewBag.email</h3>
+<a asp-controller="user" asp-action="logout">Logout</a>
+<a asp-controller="user" asp-action="profile">Profile</a> *@
+@* @if (ViewBag.IsAdmin)
+{
+    <p>Bạn đang đăng nhập với quyền <strong>Admin</strong>.</p>
+    <a href="/admin/dashboard">Vào trang quản trị</a>
+}
+
+@if (ViewBag.IsUser && !ViewBag.IsAdmin)
+{
+    <p>Bạn là người dùng thông thường.</p>
+}
+
+@if (!ViewBag.IsAdmin && !ViewBag.IsUser)
+{
+    <p>Bạn chưa được gán quyền nào.</p>
+} *@
+@await Component.InvokeAsync("Imagebar")
+@await Component.InvokeAsync("Trandy")
+<!-- Products End -->
+<!-- Subscribe Start -->
+<!-- Subscribe End -->
+<!-- Products Start -->
+@await Component.InvokeAsync("JustArrived")

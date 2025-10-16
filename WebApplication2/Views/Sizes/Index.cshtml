@@ -1,0 +1,37 @@
+﻿@model IEnumerable<WebApplication2.Models.Size>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="w3-container">
+
+
+    <table class="w3-table-all w3-hoverable">
+        <thead>
+            <tr class="w3-light-grey">
+                <th>@Html.DisplayNameFor(model => model.SizeName)</th>
+                <th>@Html.DisplayNameFor(model => model.SizeOrder)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.SizeName)</td>
+                <td>@Html.DisplayFor(modelItem => item.SizeName)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SizeId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.SizeId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SizeId">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
